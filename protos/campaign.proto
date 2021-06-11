@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package podkrepibg.campaign;
 
-option csharp_namespace = "Podkrepibg.Campaigns";
+option csharp_namespace = "Podkrepibg.DataContracts.Campaign";
 option go_package = "github.com/daritelska-platforma/types/go-types/campaign";
 
 import "common/nomenclatures.proto";

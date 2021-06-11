@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+
+option csharp_namespace = "Podkrepibg.DataContracts.Common";
 option go_package = "github.com/daritelska-platforma/types/go-types/common";
 
 package podkrepibg.common.error;
