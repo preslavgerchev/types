@@ -14,3 +14,7 @@ tasks:
           --go-grpc_out=go-types \
           --go_out=go-types
     silent: false
+  build_csharp:
+    cmds:
+      - dotnet build csharp/
+    silent: false
