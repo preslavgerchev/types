@@ -3,7 +3,7 @@ syntax = "proto3";
 package podkrepibg.account;
 
 option csharp_namespace = "Podkrepibg.DataContracts.Account";
-option go_package = "github.com/daritelska-platforma/types/go-types/account";
+option go_package = "github.com/podkrepi-bg/types/go-types/account";
 
 service AccountService {
   rpc CreateAccount (CreateAccountRequest) returns (Account);

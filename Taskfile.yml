@@ -9,8 +9,8 @@ tasks:
         protoc account.proto campaign.proto common/error.proto common/nomenclatures.proto \
           -I/usr/include \
           --proto_path=protos \
-          --go-grpc_opt=module=github.com/daritelska-platforma/types/go-types \
-          --go_opt=module=github.com/daritelska-platforma/types/go-types \
+          --go-grpc_opt=module=github.com/podkrepi-bg/types/go-types \
+          --go_opt=module=github.com/podkrepi-bg/types/go-types \
           --go-grpc_out=go-types \
           --go_out=go-types
     silent: false

@@ -1,3 +1,3 @@
-module github.com/daritelska-platforma/types/go-types
+module github.com/podkrepi-bg/types/go-types
 
 go 1.16
