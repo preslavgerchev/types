@@ -1,6 +1,6 @@
 FROM golang:1.16-alpine
 
-RUN apk --no-cache add curl git protoc protobuf-dev
+RUN apk --no-cache add curl git protoc=3.13.0-r2 protobuf-dev
 RUN sh -c "$(curl --location https://taskfile.dev/install.sh)" -- -d -b /usr/local/bin
 
 RUN go install google.golang.org/protobuf/cmd/protoc-gen-go@v1.26

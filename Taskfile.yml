@@ -3,6 +3,10 @@
 version: '3'
 
 tasks:
+  lint_proto:
+    dir: protos
+    cmds:
+      - protolint lint .
   build_go_types:
     cmds:
       - |

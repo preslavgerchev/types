@@ -1,8 +1,8 @@
-name: Lint proto
+name: Go types
 
 on:
   workflow_dispatch:
-  push: 
+  push:
     branches: [master]
   pull_request:
     branches: [master]
@@ -10,7 +10,7 @@ on:
       - "protos/**"
 
 jobs:
-  run-lint:
+  check-go-types:
     runs-on: ubuntu-latest
 
     steps:
@@ -35,8 +35,10 @@ jobs:
         run: |
           go install google.golang.org/protobuf/cmd/protoc-gen-go@v1.26
           go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.1
-          go get -u github.com/yoheimuta/protolint/cmd/protolint
           export PATH="$PATH:$(go env GOPATH)/bin"
 
-      - name: Lint protos
-        run: task lint_proto
+      - name: Generate Go types
+        run: task build_go_types
+
+      - name: Check if Go types are outdated
+        run: git diff --exit-code --name-only

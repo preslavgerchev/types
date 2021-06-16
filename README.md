@@ -1,10 +1,17 @@
 # Podkrepi.bg types
 This repository contains the protobuf contracts and the generated Go types used by podkrepi.bg.
 
+- [Linting](#linting)
 - [Usage](#usage)
     + [Go](#go)
     + [C#](#c-)
 - [Updating the protos](#updating-the-protos)
+
+## Linting
+Before pushing the repo make sure you lint your proto files. You can do this by running:
+```bash
+task lint_proto
+```
 
 ## Usage
 The section explains how to use the types in different languages.
