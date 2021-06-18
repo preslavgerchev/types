@@ -23,7 +23,7 @@ go get github.com/daritelska-platforma/types/go-types
 ```
 
 ### C#
-To use the Nuget package in a C# project, add the following to a `nuget.config` file in the root directory of the project.
+To use the Nuget package in a C# project, add the following to a `nuget.config` file in the root directory of the solution.
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <configuration>
