@@ -19,5 +19,6 @@
     <PackageId>Podkrepibg.DataContracts</PackageId>
     <Description>The Protobuf data contracts for Podkrepi.bg</Description>
     <Authors>Podkrepi.bg</Authors>
+    <RepositoryUrl>https://github.com/podkrepi-bg/types</RepositoryUrl>
   </PropertyGroup>
 </Project>
