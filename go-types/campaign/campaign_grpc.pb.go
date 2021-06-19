@@ -25,6 +25,8 @@ type CampaignServiceClient interface {
 	GetCampaignDetails(ctx context.Context, in *GetCampaignDetailsRequest, opts ...grpc.CallOption) (*CampaignDetails, error)
 	CreateCampaignType(ctx context.Context, in *CreateCampaignTypeRequest, opts ...grpc.CallOption) (*CreateCampaignTypeResponse, error)
 	ListCampaignTypes(ctx context.Context, in *empty.Empty, opts ...grpc.CallOption) (*CampaignTypesResponse, error)
+	// beneficiary
+	CreateBeneficiary(ctx context.Context, in *CreateBeneficiaryRequest, opts ...grpc.CallOption) (*CreateBeneficiaryResponse, error)
 }
 
 type campaignServiceClient struct {
@@ -89,6 +91,15 @@ func (c *campaignServiceClient) ListCampaignTypes(ctx context.Context, in *empty
 	return out, nil
 }
 
+func (c *campaignServiceClient) CreateBeneficiary(ctx context.Context, in *CreateBeneficiaryRequest, opts ...grpc.CallOption) (*CreateBeneficiaryResponse, error) {
+	out := new(CreateBeneficiaryResponse)
+	err := c.cc.Invoke(ctx, "/podkrepibg.campaign.CampaignService/CreateBeneficiary", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // CampaignServiceServer is the server API for CampaignService service.
 // All implementations must embed UnimplementedCampaignServiceServer
 // for forward compatibility
@@ -99,6 +110,8 @@ type CampaignServiceServer interface {
 	GetCampaignDetails(context.Context, *GetCampaignDetailsRequest) (*CampaignDetails, error)
 	CreateCampaignType(context.Context, *CreateCampaignTypeRequest) (*CreateCampaignTypeResponse, error)
 	ListCampaignTypes(context.Context, *empty.Empty) (*CampaignTypesResponse, error)
+	// beneficiary
+	CreateBeneficiary(context.Context, *CreateBeneficiaryRequest) (*CreateBeneficiaryResponse, error)
 	mustEmbedUnimplementedCampaignServiceServer()
 }
 
@@ -123,6 +136,9 @@ func (UnimplementedCampaignServiceServer) CreateCampaignType(context.Context, *C
 }
 func (UnimplementedCampaignServiceServer) ListCampaignTypes(context.Context, *empty.Empty) (*CampaignTypesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListCampaignTypes not implemented")
+}
+func (UnimplementedCampaignServiceServer) CreateBeneficiary(context.Context, *CreateBeneficiaryRequest) (*CreateBeneficiaryResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateBeneficiary not implemented")
 }
 func (UnimplementedCampaignServiceServer) mustEmbedUnimplementedCampaignServiceServer() {}
 
@@ -245,6 +261,24 @@ func _CampaignService_ListCampaignTypes_Handler(srv interface{}, ctx context.Con
 	return interceptor(ctx, in, info, handler)
 }
 
+func _CampaignService_CreateBeneficiary_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateBeneficiaryRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CampaignServiceServer).CreateBeneficiary(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/podkrepibg.campaign.CampaignService/CreateBeneficiary",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CampaignServiceServer).CreateBeneficiary(ctx, req.(*CreateBeneficiaryRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // CampaignService_ServiceDesc is the grpc.ServiceDesc for CampaignService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -275,6 +309,10 @@ var CampaignService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ListCampaignTypes",
 			Handler:    _CampaignService_ListCampaignTypes_Handler,
+		},
+		{
+			MethodName: "CreateBeneficiary",
+			Handler:    _CampaignService_CreateBeneficiary_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
