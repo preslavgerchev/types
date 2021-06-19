@@ -10,7 +10,6 @@ option csharp_namespace = "Podkrepibg.DataContracts.Campaign";
 option go_package = "github.com/podkrepi-bg/types/go-types/campaign";
 
 service CampaignService {
-
   rpc CreateCampaign (CreateCampaignRequest) returns (CreateCampaignResponse);
 
   rpc ListCampaigns (ListCampaignsRequest) returns (CampaignsResponse);
@@ -20,19 +19,17 @@ service CampaignService {
   rpc GetCampaignDetails (GetCampaignDetailsRequest) returns (CampaignDetails);
 
   // campaign types
-
-  rpc CreateCampaignType (CreateCampaignTypeRequest) returns (
-    CreateCampaignTypeResponse);
+  rpc CreateCampaignType (CreateCampaignTypeRequest) returns 
+    (CreateCampaignTypeResponse);
 
   rpc ListCampaignTypes (google.protobuf.Empty) returns (CampaignTypesResponse);
   
   // beneficiary
-  rpc CreateBeneficiary (CreateBeneficiaryRequest) returns (
-    CreateBeneficiaryResponse);
+  rpc CreateBeneficiary (CreateBeneficiaryRequest) returns 
+    (CreateBeneficiaryResponse);
 }
 
 message CreateCampaignRequest {
-
   string initiator_id = 1;
   string operator_id = 2;
   string beneficiary_id = 3;
@@ -41,7 +38,6 @@ message CreateCampaignRequest {
 }
 
 message CreateCampaignResponse {
-
   string id = 1;
 }
 
@@ -49,7 +45,6 @@ message ListCampaignsRequest {
 }
 
 message FilterCampaignsRequest {
-
   string campaign_type_id = 1;
   string campaign_subtype_id = 2;
   common.nomenclatures.CampaignState state = 3;
@@ -59,33 +54,27 @@ message FilterCampaignsRequest {
 }
 
 message CampaignsResponse {
-
   repeated Campaign campaigns = 1;
 }
 
 message GetCampaignDetailsRequest {
-
   string id = 1;
 }
 
 message CreateCampaignTypeRequest {
-
   string name = 1;
   string description = 2;
 }
 
 message CreateCampaignTypeResponse {
-
   string id = 1;
 }
 
 message CampaignTypesResponse {
-
   repeated CampaignTypeDetails campaign_types = 1;
 }
 
 message CreateBeneficiaryRequest {
-
   string first_name = 1;
   string last_name = 2;
   common.nomenclatures.BeneficiaryType type = 3;
@@ -98,18 +87,15 @@ message CreateBeneficiaryRequest {
 }
 
 message CreateBeneficiaryResponse {
-
   string id = 1;
 }
 
 message CampaignType {
-
   string id = 1;
   string name = 2;
 }
 
 message CampaignTypeDetails {
-
   string id = 1;
   string name = 2;
   string description = 3;
@@ -117,20 +103,17 @@ message CampaignTypeDetails {
 }
 
 message CampaignSubtype {
-
   string id = 1;
   string name = 2;
 }
 
 message CampaignSubtypeDetails {
-
   string id = 1;
   string name = 2;
   string description = 3;
 }
 
 message Campaign {
-
   string id = 1;
   string initiator_id = 2;
   string operator_id = 3;
@@ -147,7 +130,6 @@ message Campaign {
 }
 
 message CampaignDetails {
-
   string id = 1;
   string initiator_id = 2;
   string operator_id = 3;
@@ -166,7 +148,6 @@ message CampaignDetails {
 }
 
 message Donation {
-
   string donor_display_name = 1;
   uint32 amount = 2;
   string message = 3;
@@ -174,7 +155,6 @@ message Donation {
 }
 
 message Beneficiary {
-
   string id = 1;
   string first_name = 2;
   string last_name = 3;
@@ -188,6 +168,5 @@ message Beneficiary {
 }
 
 message BeneficiaryAdditionalDetails{
-
   string website = 1;
 }

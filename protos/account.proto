@@ -7,6 +7,7 @@ option go_package = "github.com/podkrepi-bg/types/go-types/account";
 
 service AccountService {
   rpc CreateAccount (CreateAccountRequest) returns (Account);
+
   rpc ListAccounts (ListAccountsRequest) returns (AccountList);
 }
 
