@@ -250,7 +250,7 @@ func (x *FilterCampaignsRequest) GetState() common.CampaignState {
 	if x != nil {
 		return x.State
 	}
-	return common.CampaignState_UndefinedCampaign
+	return common.CampaignState_CAMPAIGN_STATE_UNSPECIFIED
 }
 
 func (x *FilterCampaignsRequest) GetOperatorId() string {
@@ -583,7 +583,7 @@ func (x *CreateBeneficiaryRequest) GetType() common.BeneficiaryType {
 	if x != nil {
 		return x.Type
 	}
-	return common.BeneficiaryType_Individual
+	return common.BeneficiaryType_BENEFICIARY_TYPE_UNSPECIFIED
 }
 
 func (x *CreateBeneficiaryRequest) GetOrganizerId() string {
@@ -597,7 +597,7 @@ func (x *CreateBeneficiaryRequest) GetCountryIsoCode() common.ISO2CountryCode {
 	if x != nil {
 		return x.CountryIsoCode
 	}
-	return common.ISO2CountryCode_UNDEFINED_ISO2_CODE
+	return common.ISO2CountryCode_ISO2COUNTRY_CODE_UNSPECIFIED
 }
 
 func (x *CreateBeneficiaryRequest) GetCity() string {
@@ -1003,7 +1003,7 @@ func (x *Campaign) GetState() common.CampaignState {
 	if x != nil {
 		return x.State
 	}
-	return common.CampaignState_UndefinedCampaign
+	return common.CampaignState_CAMPAIGN_STATE_UNSPECIFIED
 }
 
 func (x *Campaign) GetCampaignType() *CampaignType {
@@ -1045,7 +1045,7 @@ func (x *Campaign) GetCurrency() common.CurrencyCode {
 	if x != nil {
 		return x.Currency
 	}
-	return common.CurrencyCode_UNDEFINED_CURRENCY
+	return common.CurrencyCode_CURRENCY_CODE_UNSPECIFIED
 }
 
 func (x *Campaign) GetRaisedFunds() uint32 {
@@ -1148,7 +1148,7 @@ func (x *CampaignDetails) GetState() common.CampaignState {
 	if x != nil {
 		return x.State
 	}
-	return common.CampaignState_UndefinedCampaign
+	return common.CampaignState_CAMPAIGN_STATE_UNSPECIFIED
 }
 
 func (x *CampaignDetails) GetCampaignType() *CampaignType {
@@ -1197,7 +1197,7 @@ func (x *CampaignDetails) GetCurrency() common.CurrencyCode {
 	if x != nil {
 		return x.Currency
 	}
-	return common.CurrencyCode_UNDEFINED_CURRENCY
+	return common.CurrencyCode_CURRENCY_CODE_UNSPECIFIED
 }
 
 func (x *CampaignDetails) GetRaisedFunds() uint32 {
@@ -1366,7 +1366,7 @@ func (x *Beneficiary) GetType() common.BeneficiaryType {
 	if x != nil {
 		return x.Type
 	}
-	return common.BeneficiaryType_Individual
+	return common.BeneficiaryType_BENEFICIARY_TYPE_UNSPECIFIED
 }
 
 func (x *Beneficiary) GetOrganizerId() string {
@@ -1380,7 +1380,7 @@ func (x *Beneficiary) GetCountryIsoCode() common.ISO2CountryCode {
 	if x != nil {
 		return x.CountryIsoCode
 	}
-	return common.ISO2CountryCode_UNDEFINED_ISO2_CODE
+	return common.ISO2CountryCode_ISO2COUNTRY_CODE_UNSPECIFIED
 }
 
 func (x *Beneficiary) GetCity() string {
