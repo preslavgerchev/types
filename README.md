@@ -23,7 +23,23 @@ go get github.com/daritelska-platforma/types/go-types
 ```
 
 ### C#
-TODO
+To use the Nuget package in a C# project, add the following to a `nuget.config` file in the root directory of the solution.
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <packageSources>
+    <add key="podkrepibg-github" value="https://nuget.pkg.github.com/podkrepi-bg/index.json" />
+  </packageSources>
+  <packageSourceCredentials>
+	<podkrepibg-github>
+		<add key="Username" value="devops-podkrepi-bg" />
+		<add key="ClearTextPassword" value="&#103;hp_wZMwRA1oE6hwdsYDCziboiZFpOkkZs0eaaAt" />
+	</podkrepibg-github>	
+ </packageSourceCredentials>  
+</configuration>
+```
+
+The package can then be installed from the `podkrepibg-github` Nuget source.
 
 ## Updating the protos
 The easiest way to update the protos is:
