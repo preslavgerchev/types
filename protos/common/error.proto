@@ -1,6 +1,5 @@
 syntax = "proto3";
 
-
 option csharp_namespace = "Podkrepibg.DataContracts.Common";
 option go_package = "github.com/podkrepi-bg/types/go-types/common";
 
@@ -9,7 +8,7 @@ package podkrepibg.common.error;
 message ErrorDetails {
   string key = 1;
   string message = 2;
-};
+}
 
 message Error {
   int32 code = 1;

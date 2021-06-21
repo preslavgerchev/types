@@ -23,6 +23,7 @@ type CampaignServiceClient interface {
 	ListCampaigns(ctx context.Context, in *ListCampaignsRequest, opts ...grpc.CallOption) (*CampaignsResponse, error)
 	FilterCampaigns(ctx context.Context, in *FilterCampaignsRequest, opts ...grpc.CallOption) (*CampaignsResponse, error)
 	GetCampaignDetails(ctx context.Context, in *GetCampaignDetailsRequest, opts ...grpc.CallOption) (*CampaignDetails, error)
+	// campaign types
 	CreateCampaignType(ctx context.Context, in *CreateCampaignTypeRequest, opts ...grpc.CallOption) (*CreateCampaignTypeResponse, error)
 	ListCampaignTypes(ctx context.Context, in *empty.Empty, opts ...grpc.CallOption) (*CampaignTypesResponse, error)
 	// beneficiary
@@ -108,6 +109,7 @@ type CampaignServiceServer interface {
 	ListCampaigns(context.Context, *ListCampaignsRequest) (*CampaignsResponse, error)
 	FilterCampaigns(context.Context, *FilterCampaignsRequest) (*CampaignsResponse, error)
 	GetCampaignDetails(context.Context, *GetCampaignDetailsRequest) (*CampaignDetails, error)
+	// campaign types
 	CreateCampaignType(context.Context, *CreateCampaignTypeRequest) (*CreateCampaignTypeResponse, error)
 	ListCampaignTypes(context.Context, *empty.Empty) (*CampaignTypesResponse, error)
 	// beneficiary
