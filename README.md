@@ -44,6 +44,7 @@ The package can then be installed from the `podkrepibg-github` Nuget source.
 ## Updating the protos
 The easiest way to update the protos is:
 - Open the repo in Visual Studio code
+- Make sure the [Remote Containers extension](https://code.visualstudio.com/docs/remote/containers) is installed.
 - Click Ctrl/Cmd + Shift + P and select `Remote-Containers: Reopen in Container`
 - The workspace will be automatically opened in a Docker container with all required dependencies to update and build the proto contracts
 
