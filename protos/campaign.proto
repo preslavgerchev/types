@@ -2,13 +2,12 @@ syntax = "proto3";
 
 package podkrepibg.campaign;
 
-option csharp_namespace = "Podkrepibg.DataContracts.Campaign";
-option go_package = "github.com/podkrepi-bg/types/go-types/campaign";
-
 import "common/nomenclatures.proto";
-
 import "google/protobuf/empty.proto";
 import "google/protobuf/timestamp.proto";
+
+option csharp_namespace = "Podkrepibg.DataContracts.Campaign";
+option go_package = "github.com/podkrepi-bg/types/go-types/campaign";
 
 service CampaignService 
 {
@@ -21,12 +20,14 @@ service CampaignService
   rpc GetCampaignDetails (GetCampaignDetailsRequest) returns (CampaignDetails);
 
   // campaign types
-  rpc CreateCampaignType (CreateCampaignTypeRequest) returns (CreateCampaignTypeResponse);
+  rpc CreateCampaignType (CreateCampaignTypeRequest) returns 
+    (CreateCampaignTypeResponse);
 
   rpc ListCampaignTypes (google.protobuf.Empty) returns (CampaignTypesResponse);
   
   // beneficiary
-  rpc CreateBeneficiary (CreateBeneficiaryRequest) returns (CreateBeneficiaryResponse);
+  rpc CreateBeneficiary (CreateBeneficiaryRequest) returns 
+    (CreateBeneficiaryResponse);
 }
 
 message CreateCampaignRequest {
@@ -41,7 +42,8 @@ message CreateCampaignResponse {
   string id = 1;
 }
 
-message ListCampaignsRequest {}
+message ListCampaignsRequest {
+}
 
 message FilterCampaignsRequest {
   string campaign_type_id = 1;
