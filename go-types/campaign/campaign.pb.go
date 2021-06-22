@@ -597,7 +597,7 @@ func (x *CreateBeneficiaryRequest) GetCountryIsoCode() common.ISO2CountryCode {
 	if x != nil {
 		return x.CountryIsoCode
 	}
-	return common.ISO2CountryCode_ISO2_COUNTRY_CODE_UNSPECIFIED
+	return common.ISO2CountryCode_ISO2COUNTRY_CODE_UNSPECIFIED
 }
 
 func (x *CreateBeneficiaryRequest) GetCity() common.City {
@@ -1045,7 +1045,7 @@ func (x *Campaign) GetCurrency() common.CurrencyCode {
 	if x != nil {
 		return x.Currency
 	}
-	return common.CurrencyCode_CURRENCY_UNSPECIFIED
+	return common.CurrencyCode_CURRENCY_CODE_UNSPECIFIED
 }
 
 func (x *Campaign) GetRaisedFunds() uint32 {
@@ -1197,7 +1197,7 @@ func (x *CampaignDetails) GetCurrency() common.CurrencyCode {
 	if x != nil {
 		return x.Currency
 	}
-	return common.CurrencyCode_CURRENCY_UNSPECIFIED
+	return common.CurrencyCode_CURRENCY_CODE_UNSPECIFIED
 }
 
 func (x *CampaignDetails) GetRaisedFunds() uint32 {
@@ -1380,7 +1380,7 @@ func (x *Beneficiary) GetCountryIsoCode() common.ISO2CountryCode {
 	if x != nil {
 		return x.CountryIsoCode
 	}
-	return common.ISO2CountryCode_ISO2_COUNTRY_CODE_UNSPECIFIED
+	return common.ISO2CountryCode_ISO2COUNTRY_CODE_UNSPECIFIED
 }
 
 func (x *Beneficiary) GetCity() common.City {
