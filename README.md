@@ -19,7 +19,7 @@ The section explains how to use the types in different languages.
 ### Go
 To use the types in a Go project run:
 ```bash
-go get github.com/daritelska-platforma/types/go-types
+go get github.com/podkrepi-bg/types/go-types
 ```
 
 ### C#
