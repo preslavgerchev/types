@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package podkrepibg.common.error;
 
-option csharp_namespace = "Podkrepibg.DataContracts.Common";
+option csharp_namespace = "Podkrepibg.DataContracts.Common.Error";
 option go_package = "github.com/podkrepi-bg/types/go-types/common";
 
 message ErrorDetails {
