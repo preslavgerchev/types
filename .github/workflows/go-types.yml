@@ -10,26 +10,16 @@ on:
       - "protos/**"
 
 jobs:
-  check-go-types:
+  check_go_types:
+    name: Build
     runs-on: ubuntu-latest
-
+    container:
+      image: ghcr.io/podkrepi-bg/go-devcontainer:v1.0.0
     steps:
       - uses: actions/checkout@v2
 
-      - name: Setup golang
-        uses: actions/setup-go@v2
-        with:
-          go-version: 1.16
-
       - name: Install protoc
-        run: |
-          curl -LO https://github.com/protocolbuffers/protobuf/releases/download/v3.13.0/protoc-3.13.0-linux-x86_64.zip
-          unzip protoc-3.13.0-linux-x86_64.zip -d $HOME/.local
-          export PATH="$PATH:$HOME/.local/bin"
-
-      - name: Install task
-        run:
-          sudo sh -c "$(curl --location https://taskfile.dev/install.sh)" -- -d -b /usr/local/bin
+        run: apk --no-cache add curl git protoc=3.13.0-r2 protobuf-dev
 
       - name: Install Go proto tooling
         run: |
@@ -41,4 +31,37 @@ jobs:
         run: task build_go_types
 
       - name: Check if Go types are outdated
-        run: git diff --exit-code --name-only
+        run: git diff --exit-code --name-!only
+
+  # check-go-types:
+  #   runs-on: ubuntu-latest
+
+  #   steps:
+  #     - uses: actions/checkout@v2
+
+  #     - name: Setup golang
+  #       uses: actions/setup-go@v2
+  #       with:
+  #         go-version: 1.16
+
+  #     - name: Install protoc
+  #       run: |
+  #         curl -LO https://github.com/protocolbuffers/protobuf/releases/download/v3.13.0/protoc-3.13.0-linux-x86_64.zip
+  #         unzip protoc-3.13.0-linux-x86_64.zip -d $HOME/.local
+  #         export PATH="$PATH:$HOME/.local/bin"
+
+  #     - name: Install task
+  #       run:
+  #         sudo sh -c "$(curl --location https://taskfile.dev/install.sh)" -- -d -b /usr/local/bin
+
+  #     - name: Install Go proto tooling
+  #       run: |
+  #         go install google.golang.org/protobuf/cmd/protoc-gen-go@v1.26
+  #         go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.1
+  #         export PATH="$PATH:$(go env GOPATH)/bin"
+
+  #     - name: Generate Go types
+  #       run: task build_go_types
+
+  #     - name: Check if Go types are outdated
+  #       run: git diff --exit-code --name-only
