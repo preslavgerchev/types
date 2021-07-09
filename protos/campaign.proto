@@ -85,6 +85,10 @@ message CreateBeneficiaryRequest {
   string email = 7;
   string phone = 8;
   string website = 9;
+  google.protobuf.Timestamp date_of_birth = 10;
+  common.nomenclatures.Region region = 11;
+  string address = 12;
+  BeneficiaryConnection connection_with_beneficiary = 13;
 }
 
 message CreateBeneficiaryResponse {
@@ -166,8 +170,31 @@ message Beneficiary {
   string email = 8;
   string phone = 9;
   BeneficiaryAdditionalDetails additional_details = 10;
+  google.protobuf.Timestamp date_of_birth = 11;  
+  common.nomenclatures.Region region = 12;  
+  string address = 13;
+  BeneficiaryConnection connection_with_beneficiary = 14;
 }
 
 message BeneficiaryAdditionalDetails {
   string website = 1;
+}
+
+enum BeneficiaryConnection {
+  BENEFICIARY_CONNECTION_UNSPECIFIED = 0;
+  BENEFICIARY_CONNECTION_CHILD = 1;
+  BENEFICIARY_CONNECTION_MOTHER = 2;
+  BENEFICIARY_CONNECTION_FATHER = 3;
+  BENEFICIARY_CONNECTION_SISTER = 4;
+  BENEFICIARY_CONNECTION_BROTHER = 5;
+  BENEFICIARY_CONNECTION_GRANDCHILD = 6;
+  BENEFICIARY_CONNECTION_GRANDPARENT = 7;
+  BENEFICIARY_CONNECTION_WIFE = 8;
+  BENEFICIARY_CONNECTION_HUSBAND = 9;
+  BENEFICIARY_CONNECTION_COUSIN = 10;
+  BENEFICIARY_CONNECTION_AUNT = 11;
+  BENEFICIARY_CONNECTION_UNCLE = 12;
+  BENEFICIARY_CONNECTION_OTHER_RELATIVE = 13;
+  BENEFICIARY_CONNECTION_FRIEND = 14;
+  BENEFICIARY_CONNECTION_OTHER = 15;
 }
