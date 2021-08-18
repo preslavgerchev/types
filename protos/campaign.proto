@@ -86,7 +86,8 @@ message CreateBeneficiaryRequest {
   string phone = 8;
   string website = 9;
   string address = 10;
-  BeneficiaryConnection connection_with_beneficiary = 11;
+  Relationship relationship = 11;
+  string other_link = 12;
 }
 
 message CreateBeneficiaryResponse {
@@ -169,28 +170,29 @@ message Beneficiary {
   string phone = 9;
   BeneficiaryAdditionalDetails additional_details = 10;
   string address = 11;
-  BeneficiaryConnection connection_with_beneficiary = 12;
+  Relationship relationship = 12;
 }
 
 message BeneficiaryAdditionalDetails {
   string website = 1;
+  string other_link = 2;
 }
 
-enum BeneficiaryConnection {
-  BENEFICIARY_CONNECTION_UNSPECIFIED = 0;
-  BENEFICIARY_CONNECTION_CHILD = 1;
-  BENEFICIARY_CONNECTION_MOTHER = 2;
-  BENEFICIARY_CONNECTION_FATHER = 3;
-  BENEFICIARY_CONNECTION_SISTER = 4;
-  BENEFICIARY_CONNECTION_BROTHER = 5;
-  BENEFICIARY_CONNECTION_GRANDCHILD = 6;
-  BENEFICIARY_CONNECTION_GRANDPARENT = 7;
-  BENEFICIARY_CONNECTION_WIFE = 8;
-  BENEFICIARY_CONNECTION_HUSBAND = 9;
-  BENEFICIARY_CONNECTION_COUSIN = 10;
-  BENEFICIARY_CONNECTION_AUNT = 11;
-  BENEFICIARY_CONNECTION_UNCLE = 12;
-  BENEFICIARY_CONNECTION_OTHER_RELATIVE = 13;
-  BENEFICIARY_CONNECTION_FRIEND = 14;
-  BENEFICIARY_CONNECTION_OTHER = 15;
+enum Relationship {
+  RELATIONSHIP_UNSPECIFIED = 0;
+  RELATIONSHIP_CHILD = 1;
+  RELATIONSHIP_MOTHER = 2;
+  RELATIONSHIP_FATHER = 3;
+  RELATIONSHIP_SISTER = 4;
+  RELATIONSHIP_BROTHER = 5;
+  RELATIONSHIP_GRANDCHILD = 6;
+  RELATIONSHIP_GRANDPARENT = 7;
+  RELATIONSHIP_WIFE = 8;
+  RELATIONSHIP_HUSBAND = 9;
+  RELATIONSHIP_COUSIN = 10;
+  RELATIONSHIP_AUNT = 11;
+  RELATIONSHIP_UNCLE = 12;
+  RELATIONSHIP_OTHER_RELATIVE = 13;
+  RELATIONSHIP_FRIEND = 14;
+  RELATIONSHIP_OTHER = 15;
 }
